@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="imgs/logo.jpg" type="imgs/x-icon" />
+    <title>Damon Portfolio</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="vendor/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:400,800"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/533e5d4e51.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <i class="fas fa-bars"></i>
+    <aside>
+      <div>
+        <div class="profile">
+          <img src="imgs/Berserk.JPG" alt="" />
+          <h3>Damon</h3>
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-skype"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+          </ul>
+        </div>
+        <ul class="main">
+          <li>
+            <a href="index.html#home"
+              ><i class="fa-solid fa-house"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="index.html#about"
+              ><i class="fa-solid fa-user"></i><span>About</span></a
+            >
+          </li>
+          <li>
+            <a href="index.html#resume"
+              ><i class="fa-solid fa-file"></i><span>Resume</span></a
+            >
+          </li>
+          <li>
+            <a href="index.html#portfolio" class="active-section"
+              ><i class="fa-solid fa-book"></i><span>Portfolio</span></a
+            >
+          </li>
+          <li>
+            <a href="index.html#services"
+              ><i class="fa-solid fa-server"></i><span>Services</span></a
+            >
+          </li>
+          <li>
+            <a href="index.html#contact"
+              ><i class="fa-solid fa-envelope"></i><span>Contact</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <div class="main-page">
+      <div class="arrow">
+        <a><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+      <div class="Portfolio-det">
+        <div class="container">
+          <div class="cont">
+            <p>Portfolio Details</p>
+            <span><a href="index.html#home">Home</a> / Portfolio Details</span>
+          </div>
+        </div>
+      </div>
+      <div class="main-port">
+        <div class="container">
+          <div class="parent">
+            <div class="imgs">
+              <figure>
+                <img src="imgs/portfolio-details-1.jpg" alt="" id="one" />
+                <img
+                  src="imgs/portfolio-details-2.jpg"
+                  alt=""
+                  id="two"
+                  class="hidden"
+                />
+                <img
+                  src="imgs/portfolio-details-3.jpg"
+                  alt=""
+                  id="three"
+                  class="hidden"
+                />
+              </figure>
+              <div class="swiper">
+                <span class="one active-swiper"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+              </div>
+            </div>
+            <div class="rows">
+              <div>
+                <p class="project"><strong>Project information</strong></p>
+                <ul>
+                  <li><strong>Category:</strong> Web design</li>
+                  <li><strong>Client:</strong> ASU Company</li>
+                  <li><strong>Project date:</strong> 01 March, 2020</li>
+                  <li>
+                    <strong>Project URL:</strong>
+                    <a href="#">www.example.com</a>
+                  </li>
+                </ul>
+              </div>
+              <h2>This is an example of portfolio detail</h2>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos
+                itaque inventore commodi labore quia quia. Exercitationem
+                repudiandae officiis neque suscipit non officia eaque itaque
+                enim. Voluptatem officia accusantium nesciunt est omnis tempora
+                consectetur dignissimos. Sequi nulla at esse enim cum deserunt
+                eius.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let portImgs = document.querySelectorAll(".main-port img");
+      let portSwipers = document.querySelectorAll(".main-port .swiper span");
+      let current = 0;
+
+      setInterval(() => {
+        portImgs.forEach((img, index) => {
+          if (!img.classList.contains("hidden")) {
+            img.classList.add("hidden");
+            current = index;
+          }
+        });
+        if (current == portImgs.length - 1) {
+          current = 0;
+        } else {
+          current++;
+        }
+        portImgs[current].classList.remove("hidden");
+        swipe(portImgs[current]);
+      }, 4000);
+
+      function swipe(img) {
+        portSwipers.forEach((swiper) => {
+          swiper.classList.remove("active-swiper");
+          let id = img.id;
+          if (swiper.classList.contains(id)) {
+            swiper.classList.add("active-swiper");
+          }
+        });
+      }
+
+      portSwipers.forEach((swiper) => {
+        swiper.onclick = () => {
+          if (swiper.classList.contains("active-swiper")) {
+            return;
+          }
+          portImgs.forEach((img) => {
+            img.classList.add("hidden");
+            let clas = swiper.className;
+            if (img.id == clas) {
+              img.classList.remove("hidden");
+              swipe(img);
+            }
+          });
+        };
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
