@@ -123,6 +123,7 @@ aside {
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
   z-index: 997;
+  overflow: scroll;
 }
 
 .active-nav {
