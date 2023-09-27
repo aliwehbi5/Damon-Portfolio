@@ -123,7 +123,7 @@ aside {
   -ms-transition: var(--main-transition);
   -o-transition: var(--main-transition);
   z-index: 997;
-  overflow: scroll;
+  overflow-y: scroll;
   scrollbar-width: thin; 
   scrollbar-color: transparent transparent; 
 }
