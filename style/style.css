@@ -128,7 +128,7 @@ aside {
   scrollbar-color: transparent transparent; 
 }
 
-asider::-webkit-scrollbar {
+aside::-webkit-scrollbar {
   width: 0.5em;
 }
 
