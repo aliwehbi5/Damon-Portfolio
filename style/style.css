@@ -124,6 +124,16 @@ aside {
   -o-transition: var(--main-transition);
   z-index: 997;
   overflow: scroll;
+  scrollbar-width: thin; 
+  scrollbar-color: transparent transparent; 
+}
+
+asider::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
 
 .active-nav {
